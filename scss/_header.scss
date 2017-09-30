@@ -1,0 +1,15 @@
+#seoh1{
+    display: none;
+}
+
+#header{
+    height: 44px;
+    background-color: $header-bg;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .logo{
+        height: $logo-height;
+        margin-left:10px; 
+    }
+}
