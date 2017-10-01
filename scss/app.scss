@@ -3,3 +3,9 @@
 @import "./header.scss";
 @import "./rec.scss";
 @import "./_slider.scss";
+@import "./_navbar.scss";
+@import "./_helpers.scss";
+
+body{
+    background: $body-bg;
+}
