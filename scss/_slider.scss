@@ -2,6 +2,7 @@
     width: 100%;
     position: relative;
     overflow: hidden;
+    margin-bottom: 14px;
     .qq-slider-wrapper{
         display: flex;
         position: relative;
@@ -11,7 +12,10 @@
         position: relative;
         >a{
             display: block;
-            img{width: 100%;}
+            img{
+                width: 100%;
+                display: block;
+            }
         }
     }
 
