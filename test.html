@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JS Bin</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            list-style: none;
+            position: relative;
+            transition: .5s;
+        }
+
+        div {
+            margin: 200px;
+            width: 100px;
+            height: 100px;
+            border: 2px solid #000;
+        }
+
+        ul {
+            display: flex;
+            width: 500px;
+            transition: .5s;
+            transform: translate(-200px)
+        }
+
+        li {
+            width: 100px;
+            height: 100px;
+        }
+
+        li:nth-child(1) {
+            background: red;
+        }
+
+        li:nth-child(2) {
+            background: green;
+        }
+
+        li:nth-child(3) {
+            background: blue;
+        }
+
+        li:nth-child(4) {
+            background: purple;
+            /* transform:translate(-500px) */
+        }
+
+        li:nth-child(5) {
+            background: orange;
+            /* transform:translate(-500px) */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+    <button>111</button>
+    <script>
+        var btn = document.querySelector("button")
+
+        var lis = document.querySelectorAll("li")
+
+        var ul = document.querySelector("ul")
+
+        let index = 0
+
+        btn.onclick = function () {
+            index++
+            tick1()
+            
+        }
+
+        function tick1() {
+            ul.style.transform = `translate(${-100*index}px)`
+        }
+
+        function swap() {
+            if(lis[index-2]){
+                let li2 = lis[index-2];
+                // li2.style.display = "none";
+                let idx = li2.dataIndex
+                li2.style.transform = `translate(${100*index}px)`
+            }
+        }
+    </script>
+</body>
+
+</html>
