@@ -1,15 +1,17 @@
-(function(){
-    let slider = new Slider({
-        el:document.querySelector("#slider"),
-        slides:[
-            { link: "#", image: "img/slider1.jpg" },
-            { link: "#", image: "img/slider2.jpg" },
-            { link: "#", image: "img/slider3.jpg" },
-            { link: "#", image: "img/slider4.jpg" },
-            { link: "#", image: "img/slider5.jpg" },
-        ]
-    });
-    
+(function () {
+
+    fetch("/json/rec.json")
+        .then(res => res.json())
+        .then(render)
+
+    function render(json) {
+        let slides = json.data.slider.map(slide => ({ link: slide.linkUrl, image:slide.picUrl }));
+        new Slider({
+            el: document.querySelector("#slider"),
+            slides
+        })
+    }
+
     window.slider = slider;
 
 
