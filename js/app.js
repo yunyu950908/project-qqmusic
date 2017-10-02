@@ -4,6 +4,11 @@
         .then(res => res.json())
         .then(render)
 
+    fetch("/json/rank.json")
+        .then(res => res.json())
+        .then(json => json.data.topList)
+        .then(renderRankList)
+
     function render(json) {
         renderSlider(json.data.slider)
         renderRadios(json.data.radioList)
@@ -48,5 +53,51 @@
             </li>`).join("");
     }
 
+    // 排行榜
+    function renderRankList(list) {
+        console.log(list)
+        document.querySelector(".rank-view ul").innerHTML = list.map((item) =>
+            `
+            <li class="rank-item">
+                <a href="javascript:;" class="rank-cover">
+                    <img data-src="${item.picUrl}" class="lazyload">
+                    <span class="listen-count">
+                        <i class="listen-icon"></i>
+                        ${listenCount(item.listenCount)}万
+                    </span>
+                </a>
+                <div class="rank-info">
+                    <div class="rank-content">
+                        <h3 class="rank-title">${item.topTitle}</h3>
+                        ${songlist(item.songList)}
+                    </div>
+                    <i class="arrow-icon"></i> 
+                </div>
+            </li>
+            `).join("");
+
+        lazyload(document.querySelectorAll(".rank-view .lazyload"))
+
+        // 辅助函数 播放量
+        function listenCount(listenCount){
+            listenCount = listenCount.toString().split("");
+            listenCount.splice(-3);
+            listenCount.splice(-1,0,".");
+            listenCount = listenCount.join("");
+            return listenCount;
+        }
+
+        // 辅助函数 循环歌单前三
+        function songlist(songs) {
+            return songs.map((song, i) =>
+                `
+                <p>
+                    ${i + 1}
+                    <span class="text-name">${song.songname}</span>
+                    - ${song.singername}
+                </p>
+                `).join("");
+        }
+    }
 
 })()

@@ -24,7 +24,12 @@ p{
     margin: 0;
 }
 
-img,a{
+a{
+    display: block;
+    text-decoration: none;
+}
+
+img{
     display: block;
 }
 

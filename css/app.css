@@ -17,7 +17,11 @@ h1, h2, h3 {
 p {
   margin: 0; }
 
-img, a {
+a {
+  display: block;
+  text-decoration: none; }
+
+img {
   display: block; }
 
 i {
@@ -115,7 +119,8 @@ i {
       background: #fff; }
 
 .tabs .nav-list {
-  display: flex; }
+  display: flex;
+  background: #fff; }
   .tabs .nav-list .nav-item {
     flex-grow: 1;
     position: relative;
@@ -137,6 +142,85 @@ i {
 
 .hide {
   display: none; }
+
+.rank-view {
+  margin: 10px; }
+  .rank-view .rank-item {
+    margin-bottom: 10px;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    justify-content: flex-start; }
+    .rank-view .rank-item .rank-cover {
+      position: relative;
+      width: 100px;
+      height: 100px; }
+      .rank-view .rank-item .rank-cover:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100px;
+        background-image: url(../img/shadow_rp_b.png);
+        background-size: 1px 117px;
+        background-repeat: repeat-x;
+        z-index: 1; }
+      .rank-view .rank-item .rank-cover img {
+        width: 100px;
+        height: 100px; }
+      .rank-view .rank-item .rank-cover .listen-count {
+        position: absolute;
+        display: block;
+        left: 5px;
+        bottom: 7px;
+        line-height: 12px;
+        color: #fff;
+        opacity: .6;
+        font-size: 9px;
+        z-index: 10; }
+        .rank-view .rank-item .rank-cover .listen-count .listen-icon {
+          display: block;
+          float: left;
+          width: 10px;
+          height: 10px;
+          background-position: 0 -50px;
+          margin-top: 2px;
+          margin-right: 3px;
+          background-image: url(../img/list_sprite.png);
+          background-repeat: no-repeat;
+          background-size: 24px 60px; }
+    .rank-view .rank-item .rank-info {
+      position: relative;
+      flex-grow: 1;
+      align-self: center; }
+      .rank-view .rank-item .rank-info .rank-content {
+        height: 100%;
+        margin: 0 10px 0 15px; }
+        .rank-view .rank-item .rank-info .rank-content .rank-title {
+          font-size: 16px;
+          color: #000;
+          margin-bottom: 5px; }
+        .rank-view .rank-item .rank-info .rank-content p {
+          font-size: 14px;
+          color: rgba(0, 0, 0, 0.5);
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis; }
+          .rank-view .rank-item .rank-info .rank-content p .text-name {
+            color: #000;
+            margin-left: 8px;
+            margin-right: 5px; }
+      .rank-view .rank-item .rank-info .arrow-icon {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        margin-top: -4px;
+        width: 6px;
+        height: 6px;
+        border-right: 1px solid #b2b2b2;
+        border-bottom: 1px solid #b2b2b2;
+        transform: rotate(-45deg); }
 
 body {
   background: #f4f4f4;
