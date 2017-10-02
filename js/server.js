@@ -1,5 +1,6 @@
 const express = require("express");
 const request = require("request-promise");
+const cors = require("cors");
 const app = express();
 
 const HEADERS = {

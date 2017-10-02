@@ -8,5 +8,11 @@
   },
   "keywords": [],
   "author": "Albert Lee",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.1",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  }
 }
