@@ -6,8 +6,15 @@
 @import "./_navbar.scss";
 @import "./_helpers.scss";
 @import "./_rank.scss";
+@import "./_search.scss";
 
 body{
     background: $body-bg;
-    height: 30000px;
+    color: $body-color;
+    height: 100vh;
+    // height: 30000px;
 }
+
+// .tab-contents{
+//     height: 100%;
+// }

@@ -3,7 +3,7 @@ class Slider {
         this.$el = options.el;
         this.slides = options.slides;
         this.originLen = this.slides.length;
-        this.interval = options.interval || 3000;
+        this.interval = options.interval || 5000;
         this.index = 1;
         this.dotIndex = 0;
         this.init();

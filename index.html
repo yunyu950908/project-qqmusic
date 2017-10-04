@@ -41,12 +41,32 @@
         </div>
         <div class="rank-view tab-content hide">
             <ul>
-
+                <!-- 排行榜 -->
             </ul>
         </div>
         <div class="search-view tab-content hide">
-            搜索
+            <div class="search-bar">
+                <div class="input-wrap">
+                    <form action="#" id="search-form">
+                        <input type="search" id="search-input" placeholder="搜索歌曲、歌单、专辑" />
+                        <span id="search-btn" class="search-icon icon">搜索</span>
+                        <span id="delete-btn" class="delete-icon icon">删除</span>
+                    </form>
+                </div>
+                <div id="cancel-btn">取消</div>
+            </div>
+            <div class="search-hot">
+                <h3 class="title">热门搜索</h3>
+                <div class="hot-lists">
+                </div>
+            </div>
+            <p class="load-complete">已加载全部</p>
         </div>
+    </div>
+    <div class="loading-musicion">
+        <img src="//y.gtimg.cn/mediastyle/mobile/yqq_v5/img/loading.gif?max_age=2592000">
+        <p>页面正在努力加载中</p>
+        <span>...</span>
     </div>
 
     <script src="./js/mod/utils.js"></script>

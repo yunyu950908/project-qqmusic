@@ -1,13 +1,23 @@
 (function () {
 
-    fetch("/json/rec.json")
+    // 首页请求
+    // fetch("/json/rec.json")
+    fetch("http://localhost:4000/")
         .then(res => res.json())
         .then(render)
 
-    fetch("/json/rank.json")
+    // 排行榜请求
+    // fetch("/json/rank.json")
+    fetch("http://localhost:4000/rank")
         .then(res => res.json())
         .then(json => json.data.topList)
         .then(renderRankList)
+
+    // 热门搜索
+    fetch("../json/hot.json")
+        .then(res => res.json())
+        .then(json => json.data)
+        .then(renderHotList)
 
     function render(json) {
         renderSlider(json.data.slider)
@@ -55,7 +65,7 @@
 
     // 排行榜
     function renderRankList(list) {
-        console.log(list)
+        // console.log(list)
         document.querySelector(".rank-view ul").innerHTML = list.map((item) =>
             `
             <li class="rank-item">
@@ -79,10 +89,10 @@
         lazyload(document.querySelectorAll(".rank-view .lazyload"))
 
         // 辅助函数 播放量
-        function listenCount(listenCount){
+        function listenCount(listenCount) {
             listenCount = listenCount.toString().split("");
             listenCount.splice(-3);
-            listenCount.splice(-1,0,".");
+            listenCount.splice(-1, 0, ".");
             listenCount = listenCount.join("");
             return listenCount;
         }
@@ -97,6 +107,23 @@
                     - ${song.singername}
                 </p>
                 `).join("");
+        }
+    }
+
+    // 热门搜索
+    function renderHotList(list) {
+        let hotTags = [];
+        let html = `<a href="${list.special_url}" class="hot-tag special">${list.special_key}</a>`;
+        for(let i = 0; i < 6; i++){
+            hotTags.push(list.hotkey[getRandom(30)])
+        }
+        html += hotTags.map(tag => `
+            <a href="javascript:;" class="hot-tag">${tag.k}</a>
+        `).join("");
+        document.querySelector(".search-hot .hot-lists").innerHTML = html;
+
+        function getRandom(num) {
+            return Math.round(Math.random() * num)
         }
     }
 

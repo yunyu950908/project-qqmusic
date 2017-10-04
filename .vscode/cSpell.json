@@ -7,10 +7,15 @@
     // words - list of words to be always considered correct
     "words": [
         "Ftitle",
+        "beforeend",
+        "curpage",
         "imgs",
         "lazyload",
+        "nomore",
+        "perpage",
         "radioid",
         "songlist",
+        "songname",
         "transitionend"
     ],
     // flagWords - list of words to be always considered incorrect
