@@ -2,7 +2,7 @@ export class Slider {
   constructor(options = {}) {
     this.$el = options.el
     this.slides = options.slides
-    this.interval = options.interval || 3000
+    this.interval = options.interval || 5000
     this.duration = options.duration || 300
     this.index = 0
     this.render()

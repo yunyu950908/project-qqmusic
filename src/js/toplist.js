@@ -19,7 +19,7 @@ export class TopList {
       `<li class="top-item">
         <div class="top-item-media">
           <a href="#">
-            <img class="lazyload" data-src="${item.picUrl.replace('http://', 'https://')}">
+            <img class="lazyload" src="../images/loading.gif" data-src="${item.picUrl.replace('http://', 'https://')}">
           </a>
         </div>
         <div class="top-item-info">
