@@ -1,0 +1,19 @@
+@import "var";
+@import "reset";
+@import "header";
+@import "navbar";
+@import "slider";
+@import "helpers";
+@import "rec";
+@import "rank";
+@import "search";
+@import "player";
+
+body {
+  background: $body-background;
+  font-family: FZLTXIHJW--GB1-0, "hiragino sans gb", "Helvetica Neue", Helvetica, STHeiTi, Arial;
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0)
+}
